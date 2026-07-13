@@ -3,13 +3,13 @@ version: '3.8'
 services:
   # MariaDB Database
   mariadb:
-    image: mariadb:10.11
+    image: mariadb:11.8.8
     container_name: student_db
     environment:
-      MYSQL_ROOT_PASSWORD: redhat
+      MYSQL_ROOT_PASSWORD: Redmi12345
       MYSQL_DATABASE: student_db
-      MYSQL_USER: linux
-      MYSQL_PASSWORD: redhat
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: Redmi12345
     ports:
       - "3306:3306"
     volumes:
@@ -28,8 +28,8 @@ services:
       - "8080:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/student_db
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=redhat
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=Redmi12345
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_JPA_SHOW_SQL=true
     depends_on:
