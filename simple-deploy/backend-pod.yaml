@@ -8,6 +8,7 @@ spec:
   containers:
     - name: backend-app
       image: image-name
+      imagePullPolicy: Always  # <-- This forces Kubernetes to pull your new image from Docker Hub
       ports:
         - containerPort: 8080
 
